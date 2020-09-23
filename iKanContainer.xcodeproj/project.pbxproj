@@ -23,8 +23,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B2300F21251B8CA400DD5BCB /* Buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Buffer.h; sourceTree = "<group>"; };
+		B23DA836251A779C00EB6ACD /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
 		B2C5BBA2251A7044001F8619 /* iKanContainer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = iKanContainer; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C5BBA5251A7044001F8619 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B2CD2B7F251BB045006CFE1B /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B23DA834251A779C00EB6ACD /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				B23DA836251A779C00EB6ACD /* Log.h */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
 		B2C5BB99251A7044001F8619 = {
 			isa = PBXGroup;
 			children = (
@@ -57,9 +68,20 @@
 		B2C5BBA4251A7044001F8619 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				B23DA834251A779C00EB6ACD /* Log */,
+				B2C5BBAC251A7196001F8619 /* iKan */,
 				B2C5BBA5251A7044001F8619 /* main.cpp */,
+				B2CD2B7F251BB045006CFE1B /* Core.h */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		B2C5BBAC251A7196001F8619 /* iKan */ = {
+			isa = PBXGroup;
+			children = (
+				B2300F21251B8CA400DD5BCB /* Buffer.h */,
+			);
+			path = iKan;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +262,13 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					IK_ENABLE_LOG,
+				);
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/src";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -249,6 +278,8 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/src";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
