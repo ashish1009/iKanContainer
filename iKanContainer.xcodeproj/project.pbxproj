@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		B2300F21251B8CA400DD5BCB /* Buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Buffer.h; sourceTree = "<group>"; };
 		B23DA836251A779C00EB6ACD /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		B25639DE251E74DC00BF0F33 /* Vector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 		B2C5BBA2251A7044001F8619 /* iKanContainer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = iKanContainer; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C5BBA5251A7044001F8619 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B2CD2B7F251BB045006CFE1B /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				B2300F21251B8CA400DD5BCB /* Buffer.h */,
+				B25639DE251E74DC00BF0F33 /* Vector.h */,
 			);
 			path = iKan;
 			sourceTree = "<group>";
@@ -266,7 +268,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
-					IK_ENABLE_LOG,
+					IK_ENABLE_BUFFER_LOG,
 				);
 				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/src";
 				PRODUCT_NAME = "$(TARGET_NAME)";

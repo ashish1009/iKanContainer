@@ -12,27 +12,27 @@ namespace iKan {
         // -------------------------------- Constructors ----------------------------------------------
         Buffer()
         {
-            IK_TRACE("Buffer(): Creating Buffer of size %d ", 0);
+            IK_BUFFER_TRACE("Buffer::Buffer(): Creating Buffer of size %d ", 1);
             // By default allocate the memory of 1 byte
             Allocate(1);
         }
         
         Buffer(size_t size)
         {
-            IK_TRACE("Buffer(size_t size): Creating Buffer of size %d ", size);
+            IK_BUFFER_TRACE("Buffer::Buffer(size_t size): Creating Buffer of size %d ", size);
             Allocate(size);
         }
         
         Buffer(const Buffer& other)
         {
-            IK_TRACE("Buffer(const Buffer& other): Copying Buffer of size %d ", other.m_Size);
+            IK_BUFFER_TRACE("Buffer::Buffer(const Buffer& other): Copying Buffer of size %d ", other.m_Size);
             Allocate(other.m_Size);
             memcpy(m_Data, other.m_Data, m_Size);
         }
         
         Buffer(Buffer&& other)
         {
-            IK_TRACE("Buffer(Buffer&& other): Moving Buffer of size %d ", other.m_Size);
+            IK_BUFFER_TRACE("Buffer::Buffer(Buffer&& other): Moving Buffer of size %d ", other.m_Size);
             m_Size = other.m_Size;
             m_Data = other.m_Data;
             
@@ -41,9 +41,18 @@ namespace iKan {
         }
         
         // ------------------------------- Assignment operator ----------------------------------------
+        Buffer& operator=(const Buffer& other)
+        {
+            IK_BUFFER_TRACE("Buffer& Buffer::operator=(const Buffer& other): Copying Buffer of size %d ", other.m_Size);
+            Allocate(other.m_Size);
+            memcpy(m_Data, other.m_Data, m_Size);
+            
+            return *this;
+        }
+
         Buffer& operator=(Buffer&& other)
         {
-            IK_TRACE("Buffer& operator=(Buffer&& other): Moving Buffer of size %d ", other.m_Size);
+            IK_BUFFER_TRACE("Buffer& Buffer::operator=(Buffer&& other): Moving Buffer of size %d ", other.m_Size);
             m_Size = other.m_Size;
             m_Data = other.m_Data;
             
